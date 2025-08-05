@@ -61,10 +61,6 @@ body, html {
   border-radius: 4px;
 }
 
-.login-btn {
-  background-color: #ffffff;
-  color: #d35400;
-}
 
 .register-btn {
   background-color: #f39c12;
@@ -76,4 +72,55 @@ body, html {
   flex: 1;
   padding: 40px;
   text-align: center;
+}
+.login-form-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease;
+}
+
+.login-form-container.open {
+  max-height: 400px; /* больше, чем высота формы */
+}
+
+
+/* Кнопка Войти */
+
+.login-btn {
+  background-color: #eddfd1; /* совпадает с фоном */
+  color: #b54b05; /* тёмно-оранжевый текст */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* При наведении */
+.login-btn:hover {
+  background-color: #d9cab3; /* немного темнее фона */
+}
+
+/* Активное состояние после клика */
+.login-btn.active {
+  background-color: #553118; /* ещё темнее */
+  color: white;
+}
+
+/* Поля ввода с такими же скруглениями */
+input[type="text"],
+input[type="password"] {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* При фокусе */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #553118;
 }
