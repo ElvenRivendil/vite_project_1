@@ -3,6 +3,8 @@ import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import logo from './assets/Kalaron_big_logotip_pr.png';
 
+console.log('asdfassdkfjasdk');
+
 function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
@@ -40,15 +42,7 @@ function App() {
           <button
             onClick={toggleTheme}
             title="Переключить тему"
-            style={{
-              padding: '6px 10px',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              border: 'none',
-              backgroundColor: darkTheme ? '#a36e1a' : '#f5f0e6',
-              color: darkTheme ? 'white' : '#b54b05',
-              transition: 'background-color 0.3s ease',
-            }}
+            className={`login-btn ${showLogin ? 'active' : ''}`}
             onMouseOver={e => e.currentTarget.style.backgroundColor = darkTheme ? '#8c5a14' : '#d9cab3'}
             onMouseOut={e => e.currentTarget.style.backgroundColor = darkTheme ? '#a36e1a' : '#f5f0e6'}
           >
@@ -57,15 +51,7 @@ function App() {
 
           <button
             title="Запасная кнопка"
-            style={{
-              padding: '6px 10px',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              border: 'none',
-              backgroundColor: darkTheme ? '#a36e1a' : '#f5f0e6',
-              color: darkTheme ? 'white' : '#b54b05',
-              transition: 'background-color 0.3s ease',
-            }}
+            className={`login-btn ${showLogin ? 'active' : ''}`}
             onMouseOver={e => e.currentTarget.style.backgroundColor = darkTheme ? '#8c5a14' : '#d9cab3'}
             onMouseOut={e => e.currentTarget.style.backgroundColor = darkTheme ? '#a36e1a' : '#f5f0e6'}
           >
@@ -92,7 +78,7 @@ function App() {
             Войти
           </button>
           <button
-            className={`register-btn ${showRegister ? 'active' : ''}`}
+            className={`login-btn ${showLogin ? 'active' : ''}`}
             onClick={toggleRegister}
           >
             Регистрация

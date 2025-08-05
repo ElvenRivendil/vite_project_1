@@ -82,6 +82,14 @@ body, html {
 .login-form-container.open {
   max-height: 400px; /* больше, чем высота формы */
 }
+.register-form-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease;
+}
+
+.register-form-container.open {
+  max-height: 600px; /* больше, чем высота формы */
 
 
 /* Кнопка Войти */

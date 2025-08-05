@@ -26,7 +26,7 @@ function RegisterForm({ onClose }) {
 
   return (
     <div style={{
-      background: '#fff',
+      background: '#eddfd1',
       padding: '20px',
       maxWidth: '350px',
       margin: '10px auto',
