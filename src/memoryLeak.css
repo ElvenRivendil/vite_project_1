@@ -1,0 +1,39 @@
+/* memoryLeak.css */
+
+.button-row {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .created-count {
+    margin-left: 1rem;
+    font-weight: bold;
+  }
+  
+  .container {
+    display: flex;
+    padding: 1rem;
+    height: calc(100vh - 100px);
+  }
+  
+  .explanation-box {
+    flex: 1;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  
+  .log-box {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-left: 1px solid #ccc;
+  }
+  
+  #memory-info-container > div {
+    margin-top: 1rem;
+  }
+  
