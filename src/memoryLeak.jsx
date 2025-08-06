@@ -13,6 +13,10 @@ function Index() {
     };
   }, []);
 
+  console.log('asdfkjasdkfj');
+  console.warn('Предупреждения');
+  console.error('Ошибка')
+
   const addLog = (message) => {
     setLog((prev) => [
       ...prev,
