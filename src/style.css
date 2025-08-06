@@ -1,0 +1,14 @@
+#memery {
+    position: relative;
+    top: 0;
+    transition: all .3s ease;
+}
+
+#memory:hover {
+    /* top: 30px; */
+    /* transform: translateY((30px); */
+    color: red;
+}
+#memory:active {
+    color: blue;
+}

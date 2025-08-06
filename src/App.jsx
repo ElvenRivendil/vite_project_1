@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import logo from './assets/Kalaron_big_logotip_pr.png';
+
+import './style.css'
 
 console.log('asdfassdkfjasdk');
 
@@ -95,8 +97,12 @@ function App() {
       </div>
 
       <main className="content">
-        <h1>Добро пожаловать!</h1>
-        <p>Это стартовая страница сайта.</p>
+        <button id="memory">Утечка памяти</button>
+        <button id="memory_stop">Остановить утечку</button>
+        <button id="memory_remove">Очистить</button>
+        <input type="text" id="input" />
+        <button id="debug">Debugger</button>
+        <button id="fetchButton">Fetch</button>
       </main>
     </div>
   );
