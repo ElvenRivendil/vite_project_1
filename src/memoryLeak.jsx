@@ -13,7 +13,7 @@ function Index() {
     };
   }, []);
 
-  console.log('asdfkjasdkfj');
+  console.log(new Date());
   console.warn('Предупреждения');
   console.error('Ошибка')
 
@@ -78,33 +78,78 @@ function Index() {
   };
 
   const handleDebugClick = () => {
-    addLog(
-      '🐞 Debug: Состояние массива — ' + (window.testArray?.length || 0)
-    );
+    try {
+      const output = a(); // вызов функции a()
+      addLog(
+        '🐞 Debug: Состояние массива — ' + (window.testArray?.length || 0)
+      );
+      addLog('📦 Результат функции a(): ' + JSON.stringify(output));
+    } catch (err) {
+      console.error('Ошибка в функции a():', err);
+      addLog('❌ Ошибка при вызове функции a(): ' + err.message);
+    }
   };
 
   const handleFetchClick = () => {
     addLog('🌐 Имитирован fetch-запрос...');
-    setTimeout(() => {
-      addLog('📦 Данные успешно получены!');
-    }, 1000);
+  
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        addLog('📦 Данные успешно получены!');
+      })
+      .catch(error => {
+        console.error('Ошибка fetch:', error);
+        addLog('❌ Ошибка при получении данных: ' + error.message);
+      });
   };
+  
+
+  // const handleFetchClick = () => {
+    
+  //   addLog('🌐 Имитирован fetch-запрос...');
+  //   setTimeout(() => {
+  //     addLog('📦 Данные успешно получены!');
+  //   }, 1000);
+  // };
+
+  // fetchButton.addEventListener('click', () => {
+  //   fetch('https://jsonplaceholder.typicode.com/todos/1')
+  //   .then(response => response.json())
+  //   .then(json => console.log(json))
+  // });
+
+  function a() {
+    // debugger;
+    const result = [1 + 1];           // массив, чтобы можно было .push()
+    const newResult = result[0] * 2 + b(1);  // просто пример вычисления
+    result.push(newResult);
+    return result;
+  }
+  
+
+  function b(data) {
+    // Заглушка: просто возвращает значение, например, удваивает
+    const myResult = data + 2;
+    return myResult;
+  }
 
   return (
     <main className="main">
       <div className="button-panel">
-        <button onClick={handleMemoryStart}>Утечка памяти</button>
-        <button onClick={handleMemoryStop}>Остановить утечку</button>
-        <button onClick={handleMemoryClear}>Очистить</button>
+        <button id="memory" onClick={handleMemoryStart}>Утечка памяти</button>
+        <button id="memory_stop" onClick={handleMemoryStop}>Остановить утечку</button>
+        <button id="memory_clear" onClick={handleMemoryClear}>Очистить</button>
         <input
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Введите что-нибудь"
         />
-        <button onClick={handleDebugClick}>Debugger</button>
-        <button onClick={handleFetchClick}>Fetch</button>
-        <button onClick={clearLog}>🗑 Очистить лог</button>
+        <button id="debug" onClick={handleDebugClick}>Debugger</button>
+        <button id="fetch" onClick={handleFetchClick}>Fetch</button>
+        <button id="debug_clear" onClick={clearLog}>🗑 Очистить лог</button>
       </div>
 
       <div className="top-panel">

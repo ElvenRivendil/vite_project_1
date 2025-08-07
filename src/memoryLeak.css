@@ -33,20 +33,40 @@
     border-left: 1px solid #ccc;
   }
   
-  #memery {
+  /* #memory {
     position: relative;
     top: 0;
-    transition: all .3s ease;
+    transition: color .3s ease, transform .3s ease;
   }
   
   #memory:hover {
+    position: relative;
     /* top: 30px; */
-    /* transform: translateY((30px); */
-    color: red;
+    transform: rotate(10deg) scale(1.1);
   }
+
   #memory:active {
     color: blue;
     
+  #memory-info-container > div {
+    margin-top: 1rem;
+  } */
+
+  #memory {
+    position: relative;
+    top: 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  #memory:hover {
+    transform: rotate(10deg) scale(1.1);
+    color: red;
+  }
+  
+  #memory:active {
+    color: blue;
+  }
+  
   #memory-info-container > div {
     margin-top: 1rem;
   }
